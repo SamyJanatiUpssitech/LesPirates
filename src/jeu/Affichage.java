@@ -1,8 +1,7 @@
 package jeu;
 
 import java.util.Scanner;
-import joueur.Joueur;
-import objetsJeu.Carte;
+
 
 public class Affichage {
 	
@@ -23,14 +22,12 @@ public class Affichage {
         System.out.println("Création pioche (40 cartes)\n\n");
     }
 	
+	public void donnerJoueur(int numJoueur) {
+        String joueur = scanner.next();
+        System.out.println(
+                "Le joueur " + numJoueur + " est " + joueur + " et commence avec : \nVie = 5 \nPopularité = 0\n");
+    }
 	
 	
-	public static void main(String[]args) {
-		
-		Affichage affichage = new Affichage();
-		affichage.nouveauJoueur(1);
-		affichage.initPioche();
-		
-	}
 
 }

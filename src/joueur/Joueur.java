@@ -5,11 +5,13 @@ public class Joueur {
 	protected String nom;
 	protected int vie=5;
 	protected int popularite=0;
+	protected int num;
 	
-	protected Joueur(String nom, int vie, int popularite) {
+	protected Joueur(String nom, int vie, int popularite, int num) {
 		this.nom = nom;
 		this.vie = vie;
 		this.popularite = popularite;
+		this.num = num;
 	}
 	
 	public String getNom() {
