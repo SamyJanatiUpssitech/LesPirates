@@ -12,10 +12,11 @@ public class Affichage {
 		System.out.println("nb tour : "+nbTour+"\n\n");
 	}
 	
-	public void nouveauJoueur(int numJoueur) {
+	public String nouveauJoueur(int numJoueur) {
 		System.out.println("Nom du nouveau joueur : ");
 		String nom = scanner.next();
 		System.out.println("\n" + nom+" a été crée\n");
+		return (nom);
 	}
 	
 	public void initPioche() {
@@ -28,6 +29,7 @@ public class Affichage {
 		
 		Affichage affichage = new Affichage();
 		affichage.nouveauJoueur(1);
+		affichage.initPioche();
 		
 	}
 
