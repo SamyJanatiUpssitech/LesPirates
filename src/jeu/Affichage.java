@@ -14,18 +14,18 @@ public class Affichage {
 	public String nouveauJoueur(int numJoueur) {
 		System.out.println("Nom du nouveau joueur : ");
 		String nom = scanner.next();
-		System.out.println("\n" + nom+" a été crée\n");
+		System.out.println("\n" + nom+" a ï¿½tï¿½ crï¿½e\n");
 		return (nom);
 	}
 	
 	public void initPioche() {
-        System.out.println("Création pioche (40 cartes)\n\n");
+        System.out.println("Creation pioche (40 cartes)\n\n");
     }
 	
 	public void donnerJoueur(int numJoueur) {
         String joueur = scanner.next();
         System.out.println(
-                "Le joueur " + numJoueur + " est " + joueur + " et commence avec : \nVie = 5 \nPopularité = 0\n");
+                "Le joueur " + numJoueur + " est " + joueur + " et commence avec : \nVie = 5 \nPopularitï¿½ = 0\n");
     }
 	
 	
