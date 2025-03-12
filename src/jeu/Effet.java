@@ -1,0 +1,15 @@
+package jeu;
+
+public enum Effet {
+    VOL_PLANIFIE,
+    RENOUVEAU,
+    DECLIN,
+    ROULETTE_RUSSE,
+    EGO_FRAGILE,
+    AURA_INSTABLE,
+    COUP_DE_SABRE,
+    ABORDAGE_REUSSI,
+    MAIN_DE_FER,
+    DISCOURS_INSPIRANT,
+    REVOLTE_ORGANISEE
+}
