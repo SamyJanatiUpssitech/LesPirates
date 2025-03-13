@@ -5,7 +5,7 @@ import joueur.Joueur;
 public class CarteEgoFragile extends Carte {
 
     public CarteEgoFragile() {
-        super("Ã‰go Fragile", Effet.EGO_FRAGILE);
+        super("Égo Fragile", Effet.EGO_FRAGILE);
     }
 
     @Override

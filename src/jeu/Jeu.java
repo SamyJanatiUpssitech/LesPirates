@@ -20,7 +20,7 @@ public class Jeu {
     }
 
     public void start() {
-        affichage.afficherMessage("\n Début du jeu !");
+        affichage.afficherMessage("\n D�but du jeu !");
 
         while (!joueur1.aGagne() && !joueur2.aGagne() && !joueur1.aPerdu() && !joueur2.aPerdu()) {
             affichage.afficherNbTour(tour);
@@ -41,21 +41,21 @@ public class Jeu {
             if (choix == 1) {
                 Carte cartePiochee = pioche.piocher();
                 if (cartePiochee != null) {
-                    affichage.afficherMessage("\n Vous avez pioché : " + cartePiochee.getNom());
+                    affichage.afficherMessage("\n Vous avez pioche : " + cartePiochee.getNom());
                     joueurActif.getMain().ajouterCarte(cartePiochee);
                 } else {
                     affichage.afficherMessage("\n La pioche est vide !");
                 }
             } else if (choix == 2) {
                 if (joueurActif.getMain().getNbCartes() > 0) {
-                    affichage.afficherMessage("\n Choisissez une carte à jouer :");
+                    affichage.afficherMessage("\n Choisissez une carte a jouer :");
                     affichage.afficherMain(joueurActif.getMain());
                     int indexCarte = scanner.nextInt();
                     if (indexCarte >= 0 && indexCarte < joueurActif.getMain().getNbCartes()) {
                         Carte carteJouee = joueurActif.getMain().getCarte(indexCarte);
                         carteJouee.appliquerEffet(joueurActif, adversaire);
                         joueurActif.getMain().supprimerCarte(indexCarte);
-                        affichage.afficherMessage(" " + joueurActif.getNom() + " a joué : " + carteJouee.getNom());
+                        affichage.afficherMessage(" " + joueurActif.getNom() + " a jou� : " + carteJouee.getNom());
                     } else {
                         affichage.afficherMessage("\n Choix invalide !");
                     }

@@ -14,7 +14,7 @@ public class Affichage {
     }
 
     public void afficherEtatJoueur(Joueur joueur) {
-        System.out.println("\n " + joueur.getNom() + " - Vie : " + joueur.getVie() + ", PopularitÃ© : " + joueur.getPopularite());
+        System.out.println("\n " + joueur.getNom() + " - Vie : " + joueur.getVie() + ", Popularité : " + joueur.getPopularite());
     }
 
     public void afficherMain(Main main) {
@@ -40,11 +40,11 @@ public class Affichage {
     }
 
     public void afficherGagnant(Joueur joueur) {
-        System.out.println("\n FÃ©licitations " + joueur.getNom() + " ! Vous avez gagnÃ© la partie ! ");
+        System.out.println("\n Félicitations " + joueur.getNom() + " Vous avez gagné la partie ! ");
     }
 
     public void afficherDefaite(Joueur joueur) {
-        System.out.println("\n " + joueur.getNom() + " a perdu la partie...");
+        System.out.println("\n " + joueur.getNom() + " a perdu la partie.");
     }
 
     public void afficherMessage(String message) {

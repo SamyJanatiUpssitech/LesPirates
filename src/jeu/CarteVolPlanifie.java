@@ -4,7 +4,7 @@ import joueur.Joueur;
 public class CarteVolPlanifie extends Carte {
 
     public CarteVolPlanifie() {
-        super("Vol PlanifiÃ©", Effet.VOL_PLANIFIE);
+        super("Vol Planifié", Effet.VOL_PLANIFIE);
     }
 
     @Override
