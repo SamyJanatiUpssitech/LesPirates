@@ -1,6 +1,19 @@
 package jeu;
 
+import jeu.*;
+
+
 import java.util.Random;
+import jeu.CarteRenouveau;
+import jeu.CarteDeclin;
+import jeu.CarteRouletteRusse;
+import jeu.CarteEgoFragile;
+import jeu.CarteAuraInstable;
+import jeu.CarteCoupDeSabre;
+import jeu.CarteAbordageReussi;
+import jeu.CarteMainDeFer;
+import jeu.CarteDiscoursInspirant;
+
 
 public class Pioche {
     private Carte[] cartes = new Carte[40];  
@@ -40,7 +53,7 @@ public class Pioche {
         if (indexCarte < cartes.length) {
             return cartes[indexCarte++];
         } else {
-            return null;  // Plus de cartes à piocher
+            return null;
         }
     }
 

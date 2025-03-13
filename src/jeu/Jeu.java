@@ -12,7 +12,6 @@ public class Jeu {
     private Scanner scanner = new Scanner(System.in);
 
     public Jeu() {
-        // Création des joueurs avec l'affichage
         String nomJoueur1 = affichage.nouveauJoueur(1);
         String nomJoueur2 = affichage.nouveauJoueur(2);
 
@@ -21,39 +20,52 @@ public class Jeu {
     }
 
     public void start() {
-        affichage.afficherMessage("\n🚀 Début du jeu !");
+        affichage.afficherMessage("\n Début du jeu !");
 
         while (!joueur1.aGagne() && !joueur2.aGagne() && !joueur1.aPerdu() && !joueur2.aPerdu()) {
             affichage.afficherNbTour(tour);
             joueur1.afficherEtat();
             joueur2.afficherEtat();
 
-            // Tour du joueur actif
             Joueur joueurActif = (tour % 2 == 1) ? joueur1 : joueur2;
             Joueur adversaire = (joueurActif == joueur1) ? joueur2 : joueur1;
 
-            // Demander une action au joueur
-            affichage.afficherMessage("\n👉 " + joueurActif.getNom() + ", que voulez-vous faire ?");
+            affichage.afficherMessage("\n " + joueurActif.getNom() + ", que voulez-vous faire ?");
             affichage.afficherMessage("1 - Piocher une carte");
-            affichage.afficherMessage("2 - Passer votre tour");
-            affichage.afficherMessage("👉 Choisissez une action : ");
-            
+            affichage.afficherMessage("2 - Jouer une carte de votre main");
+            affichage.afficherMessage("3 - Passer votre tour");
+            affichage.afficherMessage(" Choisissez une action : ");
+
             int choix = scanner.nextInt();
 
             if (choix == 1) {
-                // Piocher une carte
                 Carte cartePiochee = pioche.piocher();
                 if (cartePiochee != null) {
-                    affichage.afficherMessage("\n🎴 Vous avez pioché : " + cartePiochee.getNom());
-                    cartePiochee.appliquerEffet(joueurActif, adversaire);
+                    affichage.afficherMessage("\n Vous avez pioché : " + cartePiochee.getNom());
+                    joueurActif.getMain().ajouterCarte(cartePiochee);
                 } else {
-                    affichage.afficherMessage("\n⚠️ La pioche est vide !");
+                    affichage.afficherMessage("\n La pioche est vide !");
+                }
+            } else if (choix == 2) {
+                if (joueurActif.getMain().getNbCartes() > 0) {
+                    affichage.afficherMessage("\n Choisissez une carte à jouer :");
+                    affichage.afficherMain(joueurActif.getMain());
+                    int indexCarte = scanner.nextInt();
+                    if (indexCarte >= 0 && indexCarte < joueurActif.getMain().getNbCartes()) {
+                        Carte carteJouee = joueurActif.getMain().getCarte(indexCarte);
+                        carteJouee.appliquerEffet(joueurActif, adversaire);
+                        joueurActif.getMain().supprimerCarte(indexCarte);
+                        affichage.afficherMessage(" " + joueurActif.getNom() + " a joué : " + carteJouee.getNom());
+                    } else {
+                        affichage.afficherMessage("\n Choix invalide !");
+                    }
+                } else {
+                    affichage.afficherMessage("\n Vous n'avez pas de cartes en main !");
                 }
             } else {
-                affichage.afficherMessage("\n⏭️ Vous passez votre tour...");
+                affichage.afficherMessage("\n Vous passez votre tour...");
             }
 
-            // Vérification des conditions de fin de jeu après chaque tour
             if (joueur1.aGagne()) {
                 affichage.afficherGagnant(joueur1);
                 break;
