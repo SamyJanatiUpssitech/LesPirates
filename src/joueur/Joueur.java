@@ -1,7 +1,7 @@
 package joueur;
 
-import jeu.Affichage;
 import jeu.Banc;
+import jeu.IAffichage;
 import jeu.Main;
 import jeu.Zattaque;
 
@@ -12,9 +12,9 @@ public class Joueur {
     private Main main = new Main();
     private Banc banc = new Banc();
     private Zattaque zattaque = new Zattaque();
-    private Affichage affichage;
+    private IAffichage affichage;
 
-    public Joueur(String nom, Affichage affichage) {
+    public Joueur(String nom, IAffichage affichage) {
         this.nom = nom;
         this.affichage = affichage;
     }

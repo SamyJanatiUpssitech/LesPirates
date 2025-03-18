@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Jeu {
     private Joueur joueur1;
     private Joueur joueur2;
-    private Affichage affichage = new Affichage();
+    private IAffichage affichage = new Affichage();
     private Pioche pioche = new Pioche();
     private int tour = 1;
     private Scanner scanner = new Scanner(System.in);
