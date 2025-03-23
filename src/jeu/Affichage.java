@@ -17,7 +17,7 @@ public class Affichage implements IAffichage {
 
     @Override
 	public void afficherEtatJoueur(Joueur joueur) {
-        System.out.println("\n " + joueur.getNom() + " - Vie : " + joueur.getVie() + ", Popularité : " + joueur.getPopularite());
+        System.out.println("\n " + joueur.getNom() + " - Vie : " + joueur.getVie() + ", PopularitÃ© : " + joueur.getPopularite());
     }
 
     @Override
@@ -41,18 +41,18 @@ public class Affichage implements IAffichage {
         if (zattaque.getCarte() != null) {
             System.out.println("\n Carte en attaque : " + zattaque.getCarte().getNom());
         } else {
-            System.out.println("\n Aucune carte en zone d'attaque");
+            System.out.println("\n Aucune carte en zone attaque");
         }
     }
 
     @Override
 	public void afficherGagnant(Joueur joueur) {
-        System.out.println("\n Félicitations " + joueur.getNom() + " Vous avez gagné la partie ! ");
+        System.out.println("\n FÃ©licitations " + joueur.getNom() + " Vous avez gagnÃ© cette manche ! ");
     }
 
     @Override
 	public void afficherDefaite(Joueur joueur) {
-        System.out.println("\n " + joueur.getNom() + " a perdu la partie.");
+        System.out.println("\n " + joueur.getNom() + " a perdu la manche.");
     }
 
     @Override

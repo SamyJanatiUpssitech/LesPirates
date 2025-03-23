@@ -27,7 +27,7 @@ public class Jeu {
 
 
     public void start() {
-        affichage.afficherMessage("\n D�but du jeu !");
+        affichage.afficherMessage("\n Début du jeu ");
 
         while (!joueur1.aGagne() && !joueur2.aGagne() && !joueur1.aPerdu() && !joueur2.aPerdu()) {
             affichage.afficherNbTour(tour);
@@ -75,10 +75,10 @@ public class Jeu {
 
                         affichage.afficherMessage("🃏 " + joueurActif.getNom() + " a joué : " + carteJouee.getNom());
                     } else {
-                        affichage.afficherMessage("\n ⚠️ Choix invalide !");
+                        affichage.afficherMessage("\n Choix invalide !");
                     }
                 } else {
-                    affichage.afficherMessage("\n ❌ Vous n'avez pas de cartes en main !");
+                    affichage.afficherMessage("\n Vous n'avez pas de cartes en main !");
                 }
 
             } else {
