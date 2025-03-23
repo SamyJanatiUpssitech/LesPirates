@@ -10,7 +10,11 @@ public class CarteAuraInstable extends Carte {
 
     @Override
     public void appliquerEffet(Joueur joueur, Joueur adversaire) {
-        joueur.gagnerPopularite(1);
-        adversaire.perdrePopularite(1);
+        if (joueur.getVie() >= 3) {
+            joueur.gagnerPopularite(1);
+        } else {
+            joueur.perdrePopularite(1);
+        }
     }
 }
+

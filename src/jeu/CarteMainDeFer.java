@@ -10,7 +10,7 @@ public class CarteMainDeFer extends Carte {
 
     @Override
     public void appliquerEffet(Joueur joueur, Joueur adversaire) {
-        joueur.gagnerPopularite(1);
+        joueur.gagnerPopularite(2);
         adversaire.perdreVie(1);
     }
 }

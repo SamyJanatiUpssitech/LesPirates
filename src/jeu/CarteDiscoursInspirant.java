@@ -10,6 +10,6 @@ public class CarteDiscoursInspirant extends Carte {
 
     @Override
     public void appliquerEffet(Joueur joueur, Joueur adversaire) {
-        joueur.gagnerPopularite(3);
+        joueur.gagnerPopularite(1);
     }
 }

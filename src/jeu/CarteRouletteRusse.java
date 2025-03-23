@@ -11,9 +11,8 @@ public class CarteRouletteRusse extends Carte {
     @Override
     public void appliquerEffet(Joueur joueur, Joueur adversaire) {
         if (Math.random() > 0.5) {
-            joueur.perdreVie(2);
+            joueur.perdreVie(1);
         } else {
-            adversaire.perdreVie(2);
-        }
+            joueur.gagnerPopularite(2);}
     }
 }

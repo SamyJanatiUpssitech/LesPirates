@@ -17,10 +17,17 @@ public class Jeu {
 
         this.joueur1 = new Joueur(nomJoueur1, affichage);
         this.joueur2 = new Joueur(nomJoueur2, affichage);
+
+        
+        for (int i = 0; i < 4; i++) {
+            joueur1.getMain().ajouterCarte(pioche.piocher());
+            joueur2.getMain().ajouterCarte(pioche.piocher());
+        }
     }
 
+
     public void start() {
-        affichage.afficherMessage("\n D�but du jeu !");
+        affichage.afficherMessage("\n D�but du jeu !");
 
         while (!joueur1.aGagne() && !joueur2.aGagne() && !joueur1.aPerdu() && !joueur2.aPerdu()) {
             affichage.afficherNbTour(tour);
@@ -46,25 +53,38 @@ public class Jeu {
                 } else {
                     affichage.afficherMessage("\n La pioche est vide !");
                 }
+
             } else if (choix == 2) {
                 if (joueurActif.getMain().getNbCartes() > 0) {
-                    affichage.afficherMessage("\n Choisissez une carte a jouer :");
+                    affichage.afficherMessage("\n Choisissez une carte à jouer :");
                     affichage.afficherMain(joueurActif.getMain());
+
                     int indexCarte = scanner.nextInt();
+
                     if (indexCarte >= 0 && indexCarte < joueurActif.getMain().getNbCartes()) {
                         Carte carteJouee = joueurActif.getMain().getCarte(indexCarte);
+
+                        
                         carteJouee.appliquerEffet(joueurActif, adversaire);
+
+                       
+                        joueurActif.getBanc().ajouterCarte(carteJouee);
+
+                       
                         joueurActif.getMain().supprimerCarte(indexCarte);
-                        affichage.afficherMessage(" " + joueurActif.getNom() + " a jou� : " + carteJouee.getNom());
+
+                        affichage.afficherMessage("🃏 " + joueurActif.getNom() + " a joué : " + carteJouee.getNom());
                     } else {
-                        affichage.afficherMessage("\n Choix invalide !");
+                        affichage.afficherMessage("\n ⚠️ Choix invalide !");
                     }
                 } else {
-                    affichage.afficherMessage("\n Vous n'avez pas de cartes en main !");
+                    affichage.afficherMessage("\n ❌ Vous n'avez pas de cartes en main !");
                 }
+
             } else {
                 affichage.afficherMessage("\n Vous passez votre tour...");
             }
+
 
             if (joueur1.aGagne()) {
                 affichage.afficherGagnant(joueur1);

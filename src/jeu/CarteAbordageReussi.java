@@ -5,7 +5,7 @@ import joueur.Joueur;
 public class CarteAbordageReussi extends Carte {
 
     public CarteAbordageReussi() {
-        super("Abordage Réussi", Effet.ABORDAGE_REUSSI);
+        super("Abordage Rï¿½ussi", Effet.ABORDAGE_REUSSI);
     }
 
     @Override

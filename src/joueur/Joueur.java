@@ -26,8 +26,13 @@ public class Joueur {
     public Banc getBanc() { return banc; }
     public Zattaque getZattaque() { return zattaque; }
 
-    public void gagnerVie(int nb) { vie += nb; }
-    public void perdreVie(int nb) { vie = Math.max(0, vie - nb); }
+    public void gagnerVie(int nb) {
+        vie = Math.min(5, vie + nb);
+    }
+
+    public void perdreVie(int nb) { 
+    	vie = Math.max(0, vie - nb); 
+    }
 
     public void gagnerPopularite(int nb) { popularite += nb; }
     public void perdrePopularite(int nb) { popularite = Math.max(0, popularite - nb); }
